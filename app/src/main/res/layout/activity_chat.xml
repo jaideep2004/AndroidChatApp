@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".ChatActivity">
+
+
+    <!--header-->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2596be"
+        android:elevation="20dp"
+        android:orientation="horizontal"
+        android:padding="13dp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/whiteprofile" />
+
+        <TextView
+            android:id="@+id/receiverTextView"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <!--    messages-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/messageRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:paddingBottom="16dp"
+        tools:listitem="@layout/activity_chat_item"
+        android:orientation="vertical"
+        android:layout_above="@id/inputLayout"
+        android:layout_below="@id/headerLayout" />
+
+    <LinearLayout
+        android:id="@+id/inputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="15dp">
+
+
+        <EditText
+            android:id="@+id/msgEdit"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/roundbg"
+            android:clickable="true"
+            android:elevation="8dp"
+            android:gravity="bottom"
+            android:hint="Enter Message"
+            android:padding="15dp"
+
+            />
+
+        <Button
+            android:id="@+id/sendEdit"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/send"
+            android:padding="10dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
